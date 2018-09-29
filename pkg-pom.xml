@@ -17,7 +17,7 @@
     <vco.version>7.4.0</vco.version>
     <!-- change to vf for releases: it will lock the workflows -->
     <allowedMask>vef</allowedMask>
-    <repoUrl>http://192.168.241.130:8280/vco-repo</repoUrl>
+    <repoUrl></repoUrl>
   </properties>
 
   <repositories>
