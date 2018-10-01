@@ -5,11 +5,12 @@ Built container can build vRO packages in maven offline mode. Suitable for Conco
 
 ## To Build Container:
 ``` bash
-docker build -t o11n-maven:<vRO version> --build-arg REPO_URL=http://<vRO Appliance>:8280/vco-repo .
+# vRO Version 7.4.0:
+docker build -t o11n-maven:7.4.0 --build-arg VRO_VERSION=7.4.0 --build-arg REPO_URL=http://<vRO Appliance>:8280/vco-repo .
 ```
 
 ## To Build vRO Packages in container:
 ``` bash
 cd <to where the pom.xml is>
-mvn -s /usr/share/maven/ref/settings-docker.xml -o install
+mvn -s /usr/share/maven/ref/settings-docker.xml -o -Dvco.version=7.4.0 install
 ```
