@@ -6,7 +6,7 @@ Built container can build vRO packages with maven in offline mode. Suitable for 
 ## To Build Container:
 ``` bash
 # vRO Version 7.4.0:
-docker build -t o11n-maven:7.4.0 --build-arg VRO_VERSION=7.4.0 --build-arg REPO_URL=http://<vRO Appliance>:8280/vco-repo .
+docker build -t o11n-maven:7.4.0 --build-arg VRO_VERSION=7.4.0 --build-arg REPO_URL=https://<vRO Appliance>:8281/vco-repo .
 ```
 
 ## To Build vRO Packages in container:
