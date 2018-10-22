@@ -4,38 +4,38 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <!--  Maybe you'd like to change this to point to your organization's groupId-->
-  <groupId>workflow-designer-exported</groupId>
-
-  <artifactId>docker.o11n.maven</artifactId>
+  <artifactId>docker-o11n-maven</artifactId>
+  <groupId>dlinsley</groupId>
   <packaging>package</packaging>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
+
 
   <properties>
-    <keystoreLocation>notUsed</keystoreLocation>
-    <keystorePassword>notUsed</keystorePassword>
+        <!-- vCO packages are signed. Create your own JKS keystore that contains a key-pair under the alias _DunesRSA_Alias_ -->
+        <!-- This keystore is meant for easier initial setup and should not be used in production -->
+    <keystoreLocation>archetype.keystore</keystoreLocation>
+    <keystorePassword>password123</keystorePassword>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <vco.version>7.4.0</vco.version>
-    <!-- change to vf for releases: it will lock the workflows -->
-    <allowedMask>vef</allowedMask>
-    <repoUrl></repoUrl>
+    <repoUrl>https://192.168.241.130:8281/vco-repo</repoUrl>
   </properties>
 
   <repositories>
     <repository>
       <id>added-by-archetype</id>
-      <name>This repo was added by the 'Expand to file system'</name>
-      <url>${repoUrl}></url>
+      <name>This repo was added by the archetype. There are better way to handle it</name>
+      <url>${repoUrl}</url>
     </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
       <id>added-by-archetype</id>
-      <name>This repo was added by the 'Expand to file system'</name>
+      <name>This repo was added by the archetype. There are better way to handle it</name>
       <url>${repoUrl}</url>
     </pluginRepository>
   </pluginRepositories>
-
   <build>
     <plugins>
       <plugin>
@@ -44,23 +44,18 @@
         <version>${vco.version}</version>
         <extensions>true</extensions>
         <configuration>
-          <packageName>docker.o11n.maven</packageName>
+          <packageName>package.skeleton</packageName>
           <!-- Set the local path to the *.vmokeystore file used to sign the content -->
           <keystoreLocation>${keystoreLocation}</keystoreLocation>
           <keystorePassword>${keystorePassword}</keystorePassword>
           <includes>
             <include>**/*.element_info.xml</include>
           </includes>
-          <packageFileName>${project.artifactId}-${project.version}</packageFileName>
-          <allowedMask>${allowedMask}</allowedMask>
+          <packageFileName>o11n-maven-${project.version}</packageFileName>
+          <allowedMask>vef</allowedMask>
           <exportVersionHistory>false</exportVersionHistory>
         </configuration>
       </plugin>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-release-plugin</artifactId>
-      <version>2.5.3</version>
-    </plugin>
     </plugins>
   </build>
 </project>

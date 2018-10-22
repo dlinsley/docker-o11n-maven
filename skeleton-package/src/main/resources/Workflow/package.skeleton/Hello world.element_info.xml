@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">Library.package.skeleton</entry>
+<entry key="name">Hello world</entry>
+<entry key="type">Workflow</entry>
+<entry key="id">3682562455829378234967908345654834235</entry>
+</properties>
